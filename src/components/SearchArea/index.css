@@ -1,0 +1,556 @@
+/* Estilizando o contêiner da barra de pesquisa para centralizar na tela com espaçamento superior */
+.search-bar {
+  background-color: #1D7263;
+  width: 1000px;
+  height: auto; /* Permite que a altura se ajuste ao conteúdo */
+  padding: 20px;
+  border-radius: 10px; /* Adicionando bordas arredondadas */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; /* Espaço entre elementos */
+  margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento superior */
+  box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+}
+
+/* Estilizando o título */
+.titlee {
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 2%;
+  word-wrap: break-word; /* Ajusta o texto para quebrar quando necessário */
+}
+
+/* Estilizando o contêiner de inputs */
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px; /* Ajuste conforme necessário */
+}
+
+/* Ajuste dos botões de pesquisa */
+.search-button {
+  background-color: #E2FBF9;
+  border: none;
+  border-radius: 10px; /* Adicionando bordas arredondadas */
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  white-space: nowrap; /* Previne quebras de linha no texto */
+  transition: all 0.3s ease; /* Adiciona uma transição suave para as mudanças */
+  margin-left: 2%;
+}
+
+.search-button img {
+  transition: filter 0.3s ease; /* Transição suave para a cor do ícone */
+}
+
+.search-button:hover {
+  border: 0.96px solid #1EE0CC; /* Atualiza a cor da borda para o hover */
+  background-color: #1EE0CC; /* Altera a cor de fundo para o hover */
+  color: #fff;
+}
+
+.search-button:hover img {
+  filter: brightness(0) invert(1); /* Muda a cor do ícone para branco */
+}
+
+/* Estilizando o contêiner de botões */
+.button-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px; /* Ajuste conforme necessário */
+  align-self: flex-start; /* Alinha à esquerda */
+  margin-left: 8%;
+}
+
+/* Estilizando os botões de opção */
+.option-button {
+  background-color: transparent;
+  border: 1px solid #1EE0CC;
+  color: #fff;
+  border-radius: 40px; /* Adicionando bordas arredondadas */
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  white-space: nowrap; /* Previne quebras de linha no texto */
+  margin-top: 2%;
+}
+
+.option-button1{
+    background-color: #B40000;
+    color: #fff;
+    border-radius: 8px; /* Adicionando bordas arredondadas */
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    white-space: nowrap; /* Previne quebras de linha no texto */
+    margin-top: 2%;
+}
+
+.option-button:hover {
+  border: 0.96px solid #1EE0CC; /* Atualiza a cor da borda para o hover */
+  background-color: #1EE0CC; /* Altera a cor de fundo para o hover */
+}
+
+/* Estilizando as imagens dentro dos botões */
+.svgImage1 {
+  width: 20px;
+  height: 20px;
+}
+
+/* Estilizando o dropdown customizado */
+.custom-select {
+  position: relative;
+  width: 420px; /* Ajuste conforme necessário */
+}
+
+.custom-select1 {
+  position: relative;
+  width: 240px; /* Ajuste conforme necessário */
+}
+
+.selected-option {
+  background: #E2FBF9;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 19px;
+  color: #000;
+  cursor: pointer;
+  background: #E2FBF9 url('data:image/svg+xml;utf8,<svg fill="%23000" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-position: calc(100% - 10px) center; /* Ajusta a posição da seta */
+  margin-right: 3%;
+  white-space: nowrap; /* Previne quebra de linha no texto do dropdown */
+  overflow: hidden; /* Esconde qualquer conteúdo que transborde */
+  text-overflow: ellipsis; /* Adiciona "..." ao final do texto que transbordar */
+}
+
+.options {
+  display: none; /* Oculta as opções inicialmente */
+  position: absolute;
+  width: 100%;
+  background: #E2FBF9;
+  border: 1px solid #000;
+  border-radius: 15px;
+  margin-top: 5px;
+  z-index: 10; /* Para garantir que o dropdown apareça acima dos outros elementos */
+}
+
+.custom-select .options, .custom-select1 .options {
+  display: block; /* Mostra o dropdown quando o estado está aberto */
+}
+
+.option {
+  padding: 10px 20px;
+  font-size: 19px;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.option:hover {
+  background: #d0f0ee;
+}
+
+.option-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+/* Consultas de mídia para dispositivos móveis */
+@media (max-width: 1024px) {
+  .search-bar {
+    background-color: #1D7263;
+    width: 70%;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    padding: 20px;
+    border-radius: 10px; /* Adicionando bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around; /* Espaço entre elementos */
+    margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento superior */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  } 
+
+  .titlee {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 2%;
+    word-wrap: break-word; /* Ajusta o texto para quebrar quando necessário */
+    margin-left: 8%;
+  }
+
+  .custom-select, .custom-select1 {
+    width: 100%; /* Ajusta a largura dos dropdowns */
+  }
+
+  .button-container {
+    flex-wrap: wrap; /* Permite que os botões se movam para a linha abaixo, se necessário */
+    gap: 8px; /* Ajusta o espaçamento entre os botões */
+    margin-left: 0; /* Remove a margem esquerda */
+    margin-top: 10px; /* Ajuste conforme necessário */
+  }
+
+  .selected-option {
+    font-size: 16px; /* Ajusta o tamanho da fonte da opção selecionada */
+    padding: 8px 16px; /* Ajusta o padding da opção selecionada */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+
+  .search-button {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    width: auto; /* Deixa a largura automática */
+    margin-left: 5px; /* Remove a margem esquerda */
+    margin-top: 4px; /* Adiciona espaçamento superior */
+    height: 39px;
+    margin-bottom: 5px;
+  }
+
+  .search-button img {
+    display: block; /* Mostra o ícone */
+  }
+
+  .search-button span {
+    display: none; /* Esconde o texto do botão */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .search-bar {
+    background-color: #1D7263;
+    width: 80%;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    padding: 20px;
+    border-radius: 10px; /* Adicionando bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around; /* Espaço entre elementos */
+    margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento superior */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  }
+
+  .titlee {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 27px;
+    margin-bottom: 2%;
+    word-wrap: break-word; /* Ajusta o texto para quebrar quando necessário */
+  }
+
+  
+  .search-button {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    width: auto; /* Deixa a largura automática */
+    margin-left: 0; /* Remove a margem esquerda */
+    margin-top: 9px; /* Adiciona espaçamento superior */
+    margin-bottom: 2px;
+  }
+
+  .option-button {
+    background-color: transparent;
+    border: 1px solid #1EE0CC;
+    color: #fff;
+    border-radius: 40px; /* Adicionando bordas arredondadas */
+    padding: 8px 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    white-space: nowrap; /* Previne quebras de linha no texto */
+    margin-top: 2%;
+  }
+
+  .option-button1{
+      background-color: #B40000;
+      color: #fff;
+      border-radius: 8px; /* Adicionando bordas arredondadas */
+      padding: 8px 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      white-space: nowrap; /* Previne quebras de linha no texto */
+      margin-top: 2%;
+  }
+
+  .svgImage1 {
+    width: 15px;
+    height: 15px;
+  }
+
+  .search-button img {
+    display: block; /* Mostra o ícone */
+  }
+
+  .search-button span {
+    display: none; /* Esconde o texto do botão */
+  }
+
+  .custom-select, .custom-select1 {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos dropdowns */
+    padding: 8px 6px 0 0; /* Ajusta o padding dos dropdowns */
+    width: auto; /* Ajusta a largura dos dropdowns */
+    display: flex;
+  }
+
+  .selected-option {
+    font-size: 16px; /* Ajusta o tamanho da fonte da opção selecionada */
+    padding: 8px 16px; /* Ajusta o padding da opção selecionada */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 150px;
+  }
+
+  .option {
+    font-size: 14px; /* Ajusta o tamanho da fonte das opções */
+  }
+}
+
+
+@media (max-width: 480px) {
+  .search-bar {
+    background-color: #1D7263;
+    width: 75%;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    padding: 20px;
+    border-radius: 10px; /* Adicionando bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around; /* Espaço entre elementos */
+    margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento superior */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  }
+
+  .svgImage1 {
+    width: 10px;
+    height: 10px;
+  }
+
+  .option-button {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 35px; /* Adicionando bordas arredondadas */
+    padding: 3px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 8px;
+    white-space: nowrap; /* Previne quebras de linha no texto */
+    margin-top: 0%;
+  }
+
+  .option-button1{
+      background-color: #B40000;
+      color: #fff;
+      border-radius: 8px; /* Adicionando bordas arredondadas */
+      padding: 3px 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      font-size: 8px;
+      white-space: nowrap; /* Previne quebras de linha no texto */
+      margin-top: 0%;
+  }
+
+  .titlee {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    word-wrap: break-word; /* Ajusta o texto para quebrar quando necessário */
+    margin-left: 2%;
+  }
+
+  .search-button {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    width: auto; /* Deixa a largura automática */
+    margin-left: 0; /* Remove a margem esquerda */
+    margin-top: 0px; /* Adiciona espaçamento superior */
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    font-size: 12px; /* Ajusta o tamanho da fonte dos botões */
+    padding: 1px 3px; /* Ajusta o padding dos botões */
+    width: 18px; /* Ajusta a largura do botão */
+    margin-top: 15px; /* Adiciona espaçamento superior */
+    height: 20px;
+  }
+
+  .search-button img {
+    display: block; /* Mostra o ícone */
+    margin: auto; /* Centraliza o ícone */
+  }
+
+  .search-button span {
+    display: none; /* Esconde o texto do botão */
+  }
+
+  .custom-select, .custom-select1 {
+    font-size: 12px; /* Ajusta o tamanho da fonte dos dropdowns */
+    padding: 6px 3px 3px 3px; /* Ajusta o padding dos dropdowns */
+    width: auto; /* Ajusta a largura dos dropdowns */
+    display: flex;
+  }
+
+  .selected-option {
+    background: #E2FBF9 url('data:image/svg+xml;utf8,<svg fill="%23000" height="14" viewBox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 2px center;
+    font-size: 10px; /* Ajusta o tamanho da fonte da opção selecionada */
+    padding: 3px 5px; /* Ajusta o padding da opção selecionada */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+    height: 20px;
+  }
+
+  .option {
+    font-size: 10px; /* Ajusta o tamanho da fonte das opções */
+  }
+
+  .option-icon{
+    height: 8px;
+    width: 8px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .search-bar {
+    background-color: #1D7263;
+    width: 75%;
+    height: auto; /* Permite que a altura se ajuste ao conteúdo */
+    padding: 20px;
+    border-radius: 10px; /* Adicionando bordas arredondadas */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around; /* Espaço entre elementos */
+    margin: 20px auto; /* Centralizar horizontalmente e adicionar espaçamento superior */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total */
+  }
+
+  .svgImage1 {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .option-button {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 40px; /* Adicionando bordas arredondadas */
+    padding: 4px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 6px;
+    white-space: nowrap; /* Previne quebras de linha no texto */
+    margin-top: 0%;
+    padding-right: 8px;
+  }
+
+  .option-button1{
+    background-color: #B40000;
+    color: #fff;
+    border-radius: 8px; /* Adicionando bordas arredondadas */
+    padding: 4px 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 6px;
+    white-space: nowrap; /* Previne quebras de linha no texto */
+    margin-top: 0%;
+}
+
+  .titlee {
+    color: white;
+    text-align: center;
+    margin: 0;
+    font-size: 12px;
+    margin-bottom: 0%;
+    word-wrap: break-word; /* Ajusta o texto para quebrar quando necessário */
+    margin-left: 2%;
+  }
+
+  .search-button {
+    font-size: 14px; /* Ajusta o tamanho da fonte dos botões */
+    width: auto; /* Deixa a largura automática */
+    margin-left: 0; /* Remove a margem esquerda */
+    margin-top: 0px; /* Adiciona espaçamento superior */
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    font-size: 12px; /* Ajusta o tamanho da fonte dos botões */
+    padding: 3px 6px; /* Ajusta o padding dos botões */
+    width: 25px; /* Ajusta a largura do botão */
+    margin-top: 15px; /* Adiciona espaçamento superior */
+    height: 22px;
+  }
+
+  .search-button img {
+    display: block; /* Mostra o ícone */
+    margin: auto; /* Centraliza o ícone */
+  }
+
+  .search-button span {
+    display: none; /* Esconde o texto do botão */
+  }
+
+  .custom-select, .custom-select1 {
+    font-size: 6px; /* Ajusta o tamanho da fonte dos dropdowns */
+    padding: 6px 3px 3px 3px; /* Ajusta o padding dos dropdowns */
+    width: auto; /* Ajusta a largura dos dropdowns */
+    display: flex;
+  }
+
+  .selected-option {
+    background: #E2FBF9 url('data:image/svg+xml;utf8,<svg fill="%23000" height="15" viewBox="0 0 24 24" width="15" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 1px center;
+    font-size: 8px; /* Ajusta o tamanho da fonte da opção selecionada */
+    padding: 6px 12px; /* Ajusta o padding da opção selecionada */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 85px;
+    height: 22px;
+  }
+
+  .option-icon{
+    height: 10px;
+    width: 10px;
+  }
+
+  .option {
+    font-size: 6px; /* Ajusta o tamanho da fonte das opções */
+  }
+}
